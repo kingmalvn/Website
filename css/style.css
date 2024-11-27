@@ -1,0 +1,774 @@
+
+  @font-face {
+      font-family: 'Plain';
+      src: url('../localfonts/Plain-Regular.woff2') format('woff2'),
+          url('../localfonts/Plain-Regular.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+  }
+
+  @font-face {
+      font-family: 'Plain';
+      src: url('../localfonts/Plain-Light.woff2') format('woff2'),
+          url('../localfonts/Plain-Light.woff') format('woff');
+      font-weight: 300;
+      font-style: normal;
+  }
+
+  @font-face {
+      font-family: 'Plain';
+      src: url('../localfonts/Plain-Bold.woff2') format('woff2'),
+          url('../localfonts/Plain-Bold.woff') format('woff');
+      font-weight: bold;
+      font-style: normal;
+  }
+
+  :root {
+    --primary-color:        #ffd500; /* Keeping the primary color bright */
+    --white-color:          #e0e0e0; /* Light gray for text */
+    --dark-color:           #121212; /* Dark background */
+    --menu-bg-color:        #1e1e1e; /* Darker menu background */
+    --gray-color:           #b0b0b0; /* Light gray for subtle text */
+    --p-color:              #c0c0c0; /* Lighter paragraph text */
+
+    /* Keeping font styles and sizes the same */
+    --base-font-family:     "Plain", -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    --font-weight-bold:     600;
+    --font-weight-normal:   400;
+    --font-weight-light:    300;
+
+    --h1-font-size:         56px;
+    --h2-font-size:         48px;
+    --h3-font-size:         38px;
+    --h4-font-size:         34px;
+    --h5-font-size:         30px;
+    --h6-font-size:         24px;
+    --p-font-size:          18px;
+    --base-font-size:       16px;
+    --button-font-size:     20px;
+
+    --border-radius-large:  100%;
+    --border-radius-medium: 80px;
+    --border-radius-small:  40px;
+}
+
+body {
+    background-color: var(--dark-color);
+    color: var(--white-color);
+    font-family: var(--base-font-family);
+}
+
+/* Updating button styles for dark mode */
+.custom-btn {
+    background: var(--primary-color);
+    color: var(--dark-color);
+    border-radius: var(--border-radius-medium);
+}
+
+.custom-btn:hover,
+.custom-btn:focus {
+    color: var(--white-color);
+    background: var(--dark-color);
+}
+
+/* Adjusting anchor links for dark mode */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: all 0.4s linear;
+}
+
+a:hover {
+    color: var(--white-color);
+    text-decoration: underline;
+}
+
+/* Navbar styles for dark mode */
+.navbar {
+    background: var(--menu-bg-color);
+}
+
+
+.nav-link {
+    color: var(--gray-color);
+}
+
+.nav-item .nav-link.active, 
+.nav-item .nav-link:hover {
+    color: var(--primary-color);
+}
+
+/* Updating input styles for dark mode */
+.contact-form .form-control {
+    background: var(--dark-color);
+    color: var(--white-color);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.contact-form ::placeholder {
+    color: var(--gray-color);
+}
+
+.hero-title,
+
+
+
+
+/* Fine-tuning the rest of the elements for dark mode */
+p {
+    color: var(--p-color);
+}
+
+
+  /*---------------------------------------
+     TYPOGRAPHY              
+  -----------------------------------------*/
+
+  h1 {
+    font-size: var(--h1-font-size);
+  }
+
+  h1,
+  h3 {
+    font-weight: var(--font-weight-light);
+  }
+
+  h2 {
+    font-size: var(--h2-font-size);
+  }
+
+  h3 {
+    font-size: var(--h3-font-size);
+  }
+
+  h4 {
+    font-size: var(--h4-font-size);
+  }
+
+  h5 {
+    font-size: var(--h5-font-size);
+  }
+
+  h6 {
+    font-weight: var(--font-weight-bold);
+    font-size: var(--h6-font-size);
+  }
+
+  p {
+    color: var(--p-color);
+    font-size: var(--p-font-size);
+    font-weight: var(--font-weight-light);
+    letter-spacing: 0.3px;
+    line-height: 2em;
+  }
+
+  .section-padding {
+    padding: 6rem 0;
+  }
+
+  .custom-icon {
+    font-size: 12px;
+    position: relative;
+    bottom: 3px;
+    left: 5px;
+    transform: rotate(-25deg);
+  }
+
+
+  /* CUSTOM BUTTON */
+  .custom-btn {
+    background: var(--dark-color);
+    border: none;
+    border-radius: var(--border-radius-medium);
+    color: var(--white-color);
+    letter-spacing: 0.2px;
+    padding: 6px 36px 10px 36px;
+    font-size: var(--button-font-size);
+    white-space: nowrap;
+  }
+
+  .custom-btn:hover,
+  .custom-btn:focus {
+    color: var(--dark-color);
+    background: var(--primary-color);
+  }
+
+
+/*---------------------------------------
+     GENERAL - Hacker Style               
+-----------------------------------------*/
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: 'Courier New', Courier, monospace; /* Hacker-style font */
+}
+
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Links */
+a {
+  color: #00ff00; /* Neon green for links */
+  text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00; /* Glowing neon effect */
+  text-decoration: none;
+  transition: all 0.4s linear;
+}
+
+a:hover {
+  color: #ff0000; /* Change to red on hover for danger effect */
+  text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000; /* Red glowing effect on hover */
+  text-decoration: none;
+  transition: color 0.4s, text-shadow 0.4s;
+}
+
+/* General body styling for hacker theme */
+body {
+  background-color: #0d0d0d; /* Dark background */
+  color: #00ff00; /* Neon green text */
+  text-shadow: 0 0 5px #00ff00; /* Slight glow effect on body text */
+  font-family: 'Courier New', Courier, monospace; /* Terminal-style font */
+}
+
+
+
+/*---------------------------------------
+     MENU - Hacker Style                
+-----------------------------------------*/
+
+.navbar {
+  background: transparent;
+  padding: 0.3rem 1rem;
+  transition: all 300ms ease-in-out;
+  position: sticky;
+  z-index: 99;
+  top: 0;
+  right: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.navbar.scroll {
+  background: #0d0d0d; /* Dark background for the hacker feel */
+  padding: 0.5rem 1rem;
+  position: fixed;
+  opacity: 1;
+  box-shadow: 0 0 15px #00ff00; /* Neon green glow */
+}
+
+.navbar-brand {
+  color: #00ff00; /* Neon green text */
+  font-family: 'Courier New', Courier, monospace; /* Terminal-like font */
+  font-weight: bold;
+  font-size: 2rem; /* Larger size for hacker-style branding */
+  text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00; /* Glowing text */
+}
+
+.navbar .custom-btn {
+  background: #ff0000; /* Danger red */
+  color: #0d0d0d; /* Dark text */
+  font-family: 'Courier New', Courier, monospace;
+  border: 2px solid #ff0000;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.navbar .custom-btn:hover {
+  background: #00ff00; /* Switch to neon green on hover */
+  color: #0d0d0d; /* Dark text */
+  box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00; /* Glowing effect */
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+  margin: 0 1.5rem;
+  padding: 0;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.2rem;
+  color: #00ff00; /* Neon green for links */
+  transition: all 0.4s ease;
+}
+
+.nav-item .nav-link.active,
+.nav-item .nav-link:hover {
+  color: #ff0000; /* Danger red on hover/active */
+  text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000; /* Glowing red on hover */
+}
+
+.nav-link {
+  color: #00ff00; /* Neon green */
+  font-weight: bold;
+  font-size: 1.2rem;
+  border-bottom: 1px solid transparent;
+  text-shadow: 0 0 5px #00ff00; /* Subtle neon glow */
+}
+
+.navbar-toggler {
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  margin: 0 10px 0 0;
+  width: 30px;
+  height: 35px;
+  outline: none;
+}
+
+.navbar-toggler .navbar-toggler-icon {
+  background: #00ff00; /* Neon green */
+  transition: background 10ms 300ms ease;
+  display: block;
+  width: 30px;
+  height: 2px;
+  position: relative;
+}
+
+.navbar-toggler .navbar-toggler-icon::before,
+.navbar-toggler .navbar-toggler-icon::after {
+  position: absolute;
+  right: 0;
+  left: 0;
+  background: #00ff00; /* Neon green for toggler lines */
+  width: 30px;
+  height: 2px;
+  content: '';
+}
+
+.navbar-toggler .navbar-toggler-icon::before {
+  top: -8px;
+}
+
+.navbar-toggler .navbar-toggler-icon::after {
+  top: 8px;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before,
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+  transform: rotate(45deg);
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+  transform: rotate(-45deg);
+}
+
+/*---------------------------------------
+   HERO - Hacker Style
+-----------------------------------------*/
+.hero {
+  background: #0d0d0d; /* Dark background */
+  color: #00ff00; /* Neon green text (matrix style) */
+  min-height: 100vh; /* Full screen height */
+  font-family: 'Courier New', Courier, monospace; /* Terminal-like font */
+  text-align: center;
+  overflow: hidden;
+  opacity: 0; /* Start invisible for fade-in */
+  animation: fadeIn 2s forwards; /* Fade-in effect */
+}
+
+.hero-title {
+  font-size: 3.5rem; /* Larger, bolder text for more impact */
+  font-weight: 900; /* Extra bold */
+  color: #ff0000; /* Dangerous red color */
+  text-shadow: 0 0 15px #ff0000, 0 0 30px #ff0000; /* Strong red glowing effect */
+  animation: glitch 1.5s infinite; /* Glitchy animation */
+}
+
+.email-link {
+  font-size: 1.7rem; /* Bigger and bolder */
+  font-weight: bold;
+  color: #ff0000; /* Red color to match the dangerous vibe */
+  background: #111; /* Darker background */
+  padding: 0.7rem 2.5rem;
+  border-radius: 5px;
+  border: 2px solid #ff0000;
+  text-decoration: none;
+  margin-top: 1rem;
+  text-shadow: 0 0 10px #ff0000; /* Glow for danger effect */
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.email-link:hover {
+  background: #ff0000; /* Hover effect with red */
+  color: #0d0d0d; /* Dark text on hover */
+  text-shadow: 0 0 5px #000;
+}
+
+/* Glitch Effect for title */
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+/* Fade-in animation for the entire hero section */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.hero img {
+  max-width: 100%;
+  height: auto;
+  filter: grayscale(100%); /* Make the image look dark and hacker-ish */
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); /* Red glowing shadow for danger */
+}
+
+
+ /*---------------------------------------
+     ABOUT - Hacker Style                
+-----------------------------------------*/
+.about-third {
+  margin: 2.2em -0.8em;
+  color: #00ff00; /* Neon green text */
+  font-family: 'Courier New', Courier, monospace; /* Terminal-like font */
+  text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00; /* Glowing text effect */
+  animation: fadeIn 2s forwards; /* Fade-in effect */
+  opacity: 0; /* Start invisible for fade-in */
+}
+
+.about-image {
+  border-radius: var(--border-radius-small);
+  filter: grayscale(100%) brightness(80%); /* Darken and desaturate for a hacker feel */
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.5); /* Glowing neon green shadow */
+  transition: box-shadow 0.3s ease;
+}
+
+.about-image:hover {
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.7); /* Red glow on hover for danger effect */
+}
+
+.profile-list li {
+  margin: 0.3rem 0;
+  color: #ff0000; /* Red text for a dangerous vibe */
+  font-weight: bold;
+  text-shadow: 0 0 5px #ff0000; /* Glowing red effect */
+  font-family: 'Courier New', Courier, monospace; /* Hacker-style font */
+}
+
+.profile-list strong {
+  display: inline-block;
+  width: 30%;
+  margin-right: 1rem;
+  color: #00ff00; /* Neon green for labels */
+  text-shadow: 0 0 10px #00ff00; /* Glowing green effect */
+}
+
+/* Fade-in animation for the about section */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+/*---------------------------------------
+   FAQ                 
+-----------------------------------------*/
+
+.faq .card-header {
+  padding: 0;
+  border-bottom: none;
+  background: linear-gradient(135deg, #222, #444); /* Gradient background for header */
+  border-radius: 8px 8px 0 0; /* Rounded top corners */
+}
+
+.faq .btn-link {
+  color: #00ff00; /* Green text for contrast */
+  font-size: var(--h6-font-size);
+  text-align: left;
+  display: block;
+  width: 100%;
+  padding: 1rem 2rem;
+  background-color: #333; /* Dark background */
+  border: none;
+  transition: all 0.3s ease; /* Smooth transitions */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+}
+
+.faq .btn-link:focus, 
+.faq .btn-link:hover {
+  color: #00ff00; /* Green text on hover */
+  text-decoration: none;
+  background-color: #555; /* Lighter background on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+}
+
+.faq .card-body {
+  padding: 2rem;
+  background-color: #222; /* Dark body background */
+  color: #000; /* Black text for card body */
+  border-radius: 0 0 8px 8px; /* Rounded bottom corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow around the card body */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+.faq-info-text {
+  font-size: var(--base-font-size);
+  display: block;
+  margin: 1.5rem 2rem 0 2rem;
+  color: #fff; /* Black text for info text */
+  line-height: 1.6;
+}
+
+.faq .card-body:hover {
+  background-color: #1b1b1b; /* Darker background on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
+}
+
+
+  /*---------------------------------------
+     TESTIMONIALS               
+  -----------------------------------------*/
+
+  .testimonials {
+    background: #1e1e1e;
+  }
+
+  .testimonials-image {
+    margin: 0 1rem 1rem 1rem;
+  }
+
+  .testimonials-image img {
+    border-radius: var(--border-radius-medium);
+  }
+
+  .testimonials-info {
+    width: 100%;
+  }
+
+  .testimonials .owl-theme .owl-nav.disabled+.owl-dots {
+    margin-top: 2rem;
+  }
+
+  .testimonials .owl-theme .owl-dots .owl-dot {
+    outline: none;
+    background: var(--gray-color);
+
+  }
+
+  .testimonials .owl-theme .owl-dots .owl-dot span {
+    width: 30px;
+    height: 3px;
+    margin: 5px;
+    background: var(--primary-color);
+  }
+
+  .testimonials .owl-theme .owl-dots .owl-dot.active span, 
+  .testimonials .owl-theme .owl-dots .owl-dot:hover span {
+    background: var(--primary-color);
+  }
+
+
+/*---------------------------------------
+   CONTACT               
+-----------------------------------------*/
+
+.contact-form .form-control {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(142, 140, 140, 0.35);
+  box-shadow: none;
+  border-radius: 0;
+  -webkit-appearance: none;
+  outline: none;
+  color: white; /* Change text color to white */
+  font-weight: var(--font-weight-light);
+  padding-left: 0;
+  cursor: text;
+}
+
+.contact-form input {
+  height: calc(2.25rem + 10px);
+}
+
+.contact-form .form-group {
+  margin: 0 0 1rem;
+  position: relative;
+}
+
+.contact-form .form-control,
+.webform-label {
+  transition: all 0.4s;
+  touch-action: manipulation;
+}
+
+.webform-label {
+  cursor: text;
+  font-size: 12px;
+  font-weight: var(--font-weight-light);
+  margin-bottom: 5px;
+}
+
+.contact-form .form-control:placeholder-shown + .webform-label {
+  cursor: text;
+  max-width: 66.66%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transform-origin: left bottom;
+  transform: translate(0, 2.125rem) scale(1.5);
+}
+
+.contact-form ::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.5); /* Change placeholder text color to a lighter shade */
+}
+
+.contact-form ::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.5); /* Change placeholder text color to a lighter shade */
+}
+
+.contact-form .form-control:focus::-webkit-input-placeholder {
+  opacity: 1;
+}
+
+.contact-form .form-control:focus::-moz-placeholder {
+  opacity: 1;
+}
+
+.contact-form .form-control:not(:placeholder-shown) + .webform-label,
+.contact-form .form-control:focus + .webform-label {
+  transform: translate(0, 0) scale(1);
+  cursor: pointer;
+  color: var(--gray-color);
+}
+
+.contact-form #submit-button {
+  background: var(--primary-color);
+  border: none;
+  border-radius: var(--border-radius-medium);
+  color: var(--dark-color);
+  cursor: pointer;
+  font-size: var(--p-font-size);
+  line-height: 0;
+  margin-top: 2.5rem;
+  padding: 1.5rem 1.8rem 1.8rem 1.8rem;
+  white-space: nowrap;
+  max-width: 190px;
+}
+
+
+  .copyright-text {
+    font-size: var(--base-font-size);
+  }
+
+
+  /*---------------------------------------
+     SOCIAL LINKS              
+  -----------------------------------------*/
+
+  .social-links {
+    margin: 40px 0;
+    padding: 0;
+  }
+
+  .social-links li {
+    display: inline-block;
+    list-style: none;
+  }
+
+  .social-links a {
+    display: inline-block;
+    color: var(--p-color);
+    font-size: var(--h6-font-size);
+    margin: 5px 20px 5px 0;
+  }
+
+  .social-links a:hover {
+    color: var(--dark-color);
+  }
+
+
+  /*---------------------------------------
+     RESPONSIVE STYLES              
+  -----------------------------------------*/
+
+  @media screen and (max-width: 1200px) {
+    h1 {
+        font-size: 42px;
+    }
+
+    h2 {
+        font-size: 36px;
+    }
+
+    h3 {
+        font-size: 32px;
+    }
+
+    h4 {
+        font-size: 28px;
+    }
+
+    .email-link {
+      font-size: 28px;
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+
+    .hero-title {
+      font-size: 1.8em;
+      padding-bottom: 1rem;
+    }
+
+    .email-link {
+      font-size: 22px;
+      padding: 0.5rem 2rem 0.7rem 2rem;
+    }
+  }
+
+  @media screen and (max-width: 991px) {
+    .navbar-nav {
+      margin: 1rem 0;
+    }
+
+    .navbar-expand-lg .navbar-nav .nav-link {
+      display: inline-block;
+      margin: 5px 0.5rem;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+
+    .hero-text {
+      position: relative;
+      top: 1.5rem;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+
+    .hero-title {
+      font-size: 26px;
+    }
+
+    .email-link {
+      font-size: 20px;
+      padding: 0.3rem 2rem 0.6rem 2rem;
+    }
+  }
